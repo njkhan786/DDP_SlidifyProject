@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shiny Application</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Shiny Application">
+  <meta name="author" content="Nasir Jamal Khan">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Shiny Application</h1>
+    <h2>Developing Data Product - project</h2>
+    <p>Nasir Jamal Khan<br/>Learner!</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Developing Data Product - Project</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This is a shiny application developed and deployed as a part of project for the course Developing Data Product.  </p>
+
+<ul>
+<li><strong>Input:</strong><br>
+
+<ul>
+<li>Select a Weather Event Type from the selectInput widget.<br></li>
+<li>select a Damage type from the radioButton group widge.<br></li>
+<li>Click on actionButton &quot;Draw Map&quot; to View the Result (requires clicking the firs time).<br></li>
+</ul></li>
+<li><strong>Output:</strong>
+
+<ul>
+<li>Total sum of the Selected Damage Type and the Selected Weather Event Type.</li>
+<li>Map of 48 U.S. States showing all the Magnitude of Damage Type.</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Accessing and Running the Appliation</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><em>Application can be accessed at the following link:</em><br>
+URL: ** <a href="http://njkhan786.shinyapps.io/ddp_project**">http://njkhan786.shinyapps.io/ddp_project**</a></p>
+
+<p><em>The Application opens up as the following screen:</em>  </p>
+
+<div style='text-align: center;'>
+    <img width="100%" src='image1.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <article data-timings="">
+    <p><em>After you choose the Event type and Damage Type the screen would like the following:</em>   </p>
+
+<p><em>You only need to click &quot;Draw map&quot; button the first time</em>  </p>
+
+<div style='text-align: center;'>
+    <img width="100%" src='image2.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>About Data:</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Data Source: U.S. National Oceanic and Atmospheric Administration&#39;s (NOAA)
+storm database.<br></li>
+<li>Time Period: It includes the data from 1950 through November 2011.<br></li>
+<li>Data Perparation: Data includes:<br>
+
+<ul>
+<li>Events which caused either Human or economic damage.<br></li>
+<li>Events occured inside 48 U.S. states.<br></li>
+<li>Occurances with the correct Latitude/Longitude i.e. which fits to U.S.map.</li>
+</ul></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <hgroup>
+    <h2>ui.R</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">slidifyUI(
+  sidebarPanel(
+    selectInput(&#39;sex&#39;, &#39;Choose Sex&#39;, c(&#39;Male&#39;, &#39;Female&#39;)),
+    selectInput(&#39;type&#39;, &#39;Choose Type&#39;,
+      c(&#39;multiBarChart&#39;, &#39;multiBarHorizontalChart&#39;)
+    )
+  ),
+  mainPanel(
+    tags$div(id = &#39;nvd3plot&#39;, class=&#39;shiny-html-output nvd3 rChart&#39;)
+  )
+)
+</code></pre>
+
+<pre><code>## Error in eval(expr, envir, enclos): could not find function &quot;slidifyUI&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Developing Data Product - Project'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Accessing and Running the Appliation'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title=''>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='About Data:'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='ui.R'>
+         5
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
